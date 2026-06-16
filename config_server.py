@@ -49,7 +49,7 @@ class ModelPaths:
     """模型文件路径配置"""
 
     # 基础目录
-    model_dir = Path() / 'models'
+    model_dir = Path(BASE_DIR) / 'models'
 
     # Paraformer 模型路径
     paraformer_dir = model_dir / 'Paraformer' / "speech_paraformer-large-vad-punc_asr_nat-zh-cn-16k-common-vocab8404-onnx"
@@ -168,7 +168,7 @@ class ForceAlignerGGUFArgs:
 
     # 显卡加速
     onnx_provider = 'CPU'       # ONNX 推理后端 (CPU, DML)
-    llm_use_gpu = False          # 是否启用 GPU 加速 GGUF 模型
+    llm_use_gpu = True          # 是否启用 GPU 加速 GGUF 模型
     
     # 对齐细节
     n_ctx = 3072                # 上下文窗口大小
